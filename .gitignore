@@ -1,0 +1,9 @@
+# PHPStrom files
+*.iml
+.idea
+/out/
+/import/
+
+# Project files
+vendor
+composer.lock

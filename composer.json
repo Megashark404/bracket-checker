@@ -1,0 +1,10 @@
+{
+    "name": "vladimirsannikov/bracketchecker",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Vladimirsannikov\\Bracketchecker\\": "src/"
+        }
+    },
+    "require": {}
+}
