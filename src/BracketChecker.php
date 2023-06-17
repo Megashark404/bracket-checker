@@ -2,14 +2,14 @@
 
 namespace Vladimirsannikov\Bracketchecker;
 
-require_once "Response.php";
-
 class BracketChecker
 {
-    public function check(): void
-    {
-        $brackets = $_REQUEST['string'] ?? null;
+    /**
+     * @throws EmptyBracketSequenceException
+     */
 
+    public function check(string $brackets): bool
+    {
         if ($brackets == null) {
             throw new EmptyBracketSequenceException();
         }
@@ -28,13 +28,8 @@ class BracketChecker
         }
 
         if ($bracketCounter == 0) {
-            $content = 'Правильная скобочная последовательность';
-            $response = new Response($content);
-        } else {
-            $status = 400;
-            $content = 'Неправильная скобочная последовательность';
-            $response = new Response($content, $status);
+            return true;
         }
-        $response->provideResponse();
+        return false;
     }
 }
